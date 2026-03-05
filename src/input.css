@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-roboto{
+    font-family: "Roboto", sans-serif;
+}
+.font-inter{
+    font-family: "Inter", sans-serif;
+}
