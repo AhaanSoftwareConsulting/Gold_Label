@@ -17,16 +17,22 @@
 </head>
 
 <body>
+   <div id="introOverlay" class="fixed inset-0 z-[999] bg-white flex items-center justify-center">
+
+        <a href="/" class="text-decoration-none"><img src="./images/logo.png" alt="logo" id="introLogo"
+            class="w-[100px] h-[44px] md:w-[192px] md:h-[81px]"></a>
+      </div>
   <header class="w-full bg-[#111317]">
     <div class="flex items-center justify-between px-6 md:px-10 xl:px-[80px] py-[20px]">
 
       <!-- LEFT: LOGO -->
-      <div class=" flex items-center shrink-0">
-        <img src="./images/logo.png" alt="" class="w-[100px] h-[44px] xl:w-[192px] xl:h-[85px]">
+      <div id="headerLogo" class=" flex items-center shrink-0 opacity-0">
+        <a href="/" class="text-decoration-none"><img src="./images/logo.png" alt="" class="w-[100px] h-[44px] xl:w-[192px] xl:h-[85px]"></a>
       </div>
 
       <!-- CENTER: MENU (Desktop) -->
-      <nav class="hidden lg:flex items-center gap-[10px] xl:gap-[20px] mx-[100px] xl:mx-[252px]">
+      <nav class="hidden lg:flex items-center gap-[10px] xl:gap-[20px] mx-[100px] xl:mx-[252px] opacity-0 translate-y-4 transition-all duration-500"
+                id="deskMenu">
         <a href="#"
           class="text-white px-[5px] py-[5px] xl:px-[10px] xl:py-[10px] hover:text-[#C9A24D] font-inter font-medium text-base transition">Services</a>
         <a href="#"
@@ -39,7 +45,7 @@
 
       <!-- RIGHT: BUTTON -->
       <div class="hidden lg:block shrink-0">
-        <a href="#" class="bg-[#C9A24D] text-white font-semibold px-[20px] py-2.5 xl:px-[30px] xl:py-5 rounded-full transition">
+        <a href="#" class="click-btn btn-style505 bg-[#C9A24D] text-white font-semibold px-[20px] py-2.5 xl:px-[30px] xl:py-5 rounded-full transition">
           Free Amazon Audit
         </a>
       </div>
@@ -79,45 +85,51 @@
   <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 
    <!-- HERO SECTION -->
-  <section class="relative bg-no-repeat bg-right bg-cover" style="background-image: url('./images/banner.png');">
+  <section id="hero" class="relative bg-no-repeat bg-right bg-cover" style="background-image: url('./images/banner.png');">
     <div class="px-6 md:px-10 xl:px-20 py-20 xl:pt-[188px] xl:pb-[160px] mx-auto">
 
       <!-- Content Wrapper -->
       <div>
 
         <!-- Title -->
-        <h1 class="text-2xl md:text-[40px] leading-relaxed xl:text-[55px] font-bold font-roboto xl:leading-[60px] text-[#111317]">
-          We Run Amazon For Brands
-          <span class="italic block">
-            That Hate Running Amazon.
-          </span>
+        <h1 id="heroTitle"
+        class="reveal-wrapper text-2xl md:text-[40px] leading-relaxed xl:text-[55px] font-bold font-roboto xl:leading-[60px] text-[#111317]">
+          <span class="reveal-text">We Run Amazon For Brands</span>
+          <span class="reveal-text italic block">
+            That Hate Running Amazon.</span>
         </h1>
 
         <!-- Subtitle -->
-        <p class="mt-6 text-base leading-relaxed xl:text-lg text-[#8C919A] xl:leading-[28px]">
+        <p id="heroText" class="mt-6 text-base leading-relaxed xl:text-lg text-[#8C919A] xl:leading-[28px]">
           See the repeatable system we've used to scale 16 brands - including one from <br
             class="hidden md:block" />$40k to $280k/month.
         </p>
 
         <!-- Buttons -->
-        <div class="mt-8 flex items-center gap-4">
+        <div id="heroButtons" 
+        class="mt-8 flex items-center gap-4">
 
-          <a href="#" class="bg-[#C9A24D] text-white font-semibold px-[15px] py-2.5 text-xs md:text-base xl:px-[30px] xl:py-5 rounded-full transition">
+          <a href="#" class="click-btn btn-style505 bg-[#C9A24D] text-white font-semibold px-[15px] py-2.5 text-xs md:text-base xl:px-[30px] xl:py-5 rounded-full transition">
             Get My Free Audit
           </a>
           <a href="#"
-            class="flex lg:hidden gap-1 border border-black text-black font-semibold px-[15px] py-2.5 text-xs md:text-base xl:px-[30px] xl:py-5 rounded-full font-semibold hover:bg-black hover:text-white transition">
+            class=" flex lg:hidden border border-black text-black font-semibold px-[15px] py-2.5 text-xs md:text-base xl:px-[30px] xl:py-5 rounded-full font-semibold hover:bg-black hover:text-white transition">
             See How We Did It<svg xmlns="http://www.w3.org/2000/svg" height="14px" viewBox="0 -960 960 960" width="14px" class="mt-[1px]"
               fill="#1f1f1f">
               <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
             </svg>
+            
           </a>
           <a href="#"
-            class="hidden lg:flex gap-1 border border-black text-black font-semibold px-[15px] py-2.5 text-xs md:text-base xl:px-[30px] xl:py-5 rounded-full font-semibold hover:bg-black hover:text-white transition">
-            See How We Did It<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+            class="hidden lg:flex neon-btn  border border-transparent text-black font-semibold px-[15px] py-2.5 text-xs md:text-base xl:px-[30px] xl:py-5 rounded-full font-semibold hover:bg-black hover:text-white transition">
+            <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            <p class="flex gap-1">See How We Did It<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
               fill="#1f1f1f">
               <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
-            </svg>
+            </svg></p>            
           </a>
         </div>
       </div>
@@ -128,7 +140,7 @@
       <div class="grid grid-cols-3 md:grid-cols-3 justify-center gap-[5px] md:gap-[27px]">
 
         <!-- Card 1 -->
-        <div class="bg-white rounded-sm xl:rounded-[20px] shadow-lg p-2 md:p-3 xl:p-6 xl:w-[409px]">
+        <div class="bg-white rounded-sm xl:rounded-[20px] shadow-lg p-2 md:p-3 xl:p-6 xl:w-[409px] reveal-up">
           <h3
             class="text-base md:text-[30px] leading-relaxed xl:text-[55px] xl:leading-[55px] font-[900] font-roboto italic text-[#C9A24D] border-b border-[#C9A24D] pb-[4px] xl:pb-[10px]">
             10 Years</h3>
@@ -138,7 +150,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-white rounded-sm xl:rounded-[20px] shadow-lg p-2 md:p-3 xl:p-6 xl:w-[409px]">
+        <div class="bg-white rounded-sm xl:rounded-[20px] shadow-lg p-2 md:p-3 xl:p-6 xl:w-[409px] reveal-up">
           <h3
             class="text-base md:text-[30px] leading-relaxed xl:text-[55px] xl:leading-[55px] font-[900] font-roboto italic text-[#C9A24D] border-b border-[#C9A24D] pb-[4px] xl:pb-[10px]">
             16+ Brands</h3>
@@ -148,7 +160,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-white rounded-sm xl:rounded-[20px] shadow-lg p-2 md:p-3 xl:p-6 xl:w-[409px]">
+        <div class="bg-white rounded-sm xl:rounded-[20px] shadow-lg p-2 md:p-3 xl:p-6 xl:w-[409px] reveal-up">
           <h3
             class="text-base md:text-[30px] leading-relaxed xl:text-[55px] xl:leading-[55px] font-[900] font-roboto italic text-[#C9A24D] border-b border-[#C9A24D] pb-[4px] xl:pb-[10px]">
             $70M+</h3>
@@ -164,21 +176,21 @@
 
    <!-- NEXT SECTION (to create overlay effect) -->
   <section class="px-6 md:px-10 xl:px-20 pt-[180px] pb-20">
-    <div class=" mx-auto text-center max-w-3xl">
+    <div class="reveal-wrapper mx-auto text-center max-w-3xl">
       <p
-        class="max-w-xs  mx-auto text-center text-base md:text-[22px] md:leading-[22px] font-roboto text-[#A8873A] font-semibold pb-4 md:pb-[30px] border-b border-[#A8873A]">
+        class="reveal-text max-w-xs mx-auto text-center text-base md:text-[22px] md:leading-[22px] font-roboto text-[#A8873A] font-semibold pb-4 md:pb-[30px] border-b border-[#A8873A]">
         THE PROBLEM</p>
-      <h3 class="mt-5 text-[24px] md:text-[30px] leading-relaxed lg:text-[45px] xl:leading-[55px] font-roboto text-[#111317] font-semibold">Your Amazon Channel is<br
+      <h3 class="reveal-text mt-5 text-[24px] md:text-[30px] leading-relaxed lg:text-[45px] xl:leading-[55px] font-roboto text-[#111317] font-semibold">Your Amazon Channel is<br
           class="hidden md:block" />
         Bleeding Money. <span class="italic font-[900]">Here's Why.</span></h3>
-      <p class="mt-5 font-inter font-medium text-sm lg:text-base lg:leading-[26px] text-[#8C919A]">You built a great brand. But
+      <p class="reveal-text mt-5 font-inter font-medium text-sm lg:text-base lg:leading-[26px] text-[#8C919A]">You built a great brand. But
         Amazon? It's chaos. Unauthorized sellers are undercutting your <br class="hidden md:block" /> pricing. You're
         losing the buy box on your own products. Your listings are a mess. And every <br class="hidden md:block" />
         month, you're leaving tens of thousands on the table.</p>
     </div>
     <!-- Card -->
     <div
-      class="mt-[30px] bg-white max-w-4xl w-full mx-auto justify-center rounded-md lg:rounded-[30px] p-6 lg:px-[34px] lg:py-[30px] shadow-[0_30px_60px_rgba(0,0,0,0.12)]">
+      class="reveal-up mt-[30px] bg-white max-w-4xl w-full mx-auto justify-center rounded-md lg:rounded-[30px] p-6 lg:px-[34px] lg:py-[30px] shadow-[0_30px_60px_rgba(0,0,0,0.12)]">
 
       <!-- Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2">
@@ -186,19 +198,19 @@
         <!-- Left Column -->
         <div class="flex flex-col gap-3 md:gap-[25px] md:pr-[50px] md:border-r md:border-[#D4A63C]">
 
-          <div class="flex items-start gap-2 lg:gap- text-sm lg:[10px] text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
+          <div class="reveal-wrapper flex items-start gap-2 lg:gap- text-sm lg:[10px] text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
             <img src="./images/icon.png" class="w-4 h-4 lg:w-[30px] lg:h-[30px] mt-1 shrink-0" />
-            Unauthorized 3P sellers destroying your<br class="hidden lg:block"/> margins
+            <p class="reveal-text">Unauthorized 3P sellers destroying your<br class="hidden lg:block"/> margins</p>
           </div>
 
-          <div class="flex items-start gap-2 lg:gap-[10px] text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
+          <div class="reveal-wrapper flex items-start gap-2 lg:gap-[10px] text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
             <img src="./images/icon.png" class="w-4 h-4 lg:w-[30px] lg:h-[30px] mt-1 shrink-0" />
-            Losing the buy box on your own<br class="hidden lg:block"/> products
+            <p class="reveal-text">Losing the buy box on your own<br class="hidden lg:block"/> products</p>
           </div>
 
-          <div class="flex items-start gap-2 lg:gap-[10px] text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
+          <div class="reveal-wrapper flex items-start gap-2 lg:gap-[10px] text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
             <img src="./images/icon.png" class="w-4 h-4 lg:w-[30px] lg:h-[30px] mt-1 shrink-0" />
-            Listings that don't convert (or don't<br class="hidden lg:block"/> exist)
+            <p class="reveal-text">Listings that don't convert (or don't<br class="hidden lg:block"/> exist)</p>
           </div>
 
         </div>
@@ -206,20 +218,17 @@
         <!-- Right Column -->
         <div class="flex flex-col gap-3 md:gap-[25px] md:pl-[50px] mt-8 md:mt-0">
 
-          <div class="flex items-start gap-2 lg:gap-[10px]  text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
+          <div class="reveal-wrapper flex items-start gap-2 lg:gap-[10px]  text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
             <img src="./images/icon.png" class="w-4 h-4 lg:w-[30px] lg:h-[30px] mt-1 shrink-0" />
-            Pricing chaos across channels
-          </div>
+            <p class="reveal-text">Pricing chaos across channels</p>        </div>
 
-          <div class="flex items-start gap-2 lg:gap-[10px]  text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
+          <div class="reveal-wrapper flex items-start gap-2 lg:gap-[10px]  text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
             <img src="./images/icon.png" class="w-4 h-4 lg:w-[30px] lg:h-[30px] mt-1 shrink-0" />
-            No control over your brand on the <br />world's biggest marketplace
-          </div>
+            <p class="reveal-text">No control over your brand on the <br />world's biggest marketplace</p>        </div>
 
-          <div class="flex items-start gap-2 lg:gap-[10px]  text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
+          <div class="reveal-wrapper flex items-start gap-2 lg:gap-[10px]  text-sm lg:text-lg italic text-[#8C919A] leading-[1.6]">
             <img src="./images/icon.png" class="w-4 h-4 lg:w-[30px] lg:h-[30px] mt-1 shrink-0" />
-            Months of revenue lost while you try<br /> to figure it out
-          </div>
+            <p class="reveal-text">Months of revenue lost while you try<br /> to figure it out</p>         </div>
 
         </div>
 
@@ -227,7 +236,7 @@
 
       <!-- Button -->
       <div class="mt-[30px]">
-        <button class="w-full bg-[#C9A24D] text-white font-semibold text-sm lg:text-base px-[20px] py-2.5 lg:px-[30px] lg:py-5 rounded-full transition">
+        <button class=" reveal-up w-full bg-[#C9A24D] text-white font-semibold text-sm lg:text-base px-[20px] py-2.5 lg:px-[30px] lg:py-5 rounded-full transition click-btn btn-style505">
           Sound familiar? Here's what we do about it.
         </button>
       </div>
@@ -242,7 +251,7 @@
         THREE WAYS TO FIX IT</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-[23px]">
-      <div class="bg-white rounded-[20px] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col pt-[20px]">
+      <div class="reveal-left bg-white rounded-[20px] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col pt-[20px]">
 
         <!-- Top Accent Tag -->
         <div class="flex justify-start">
@@ -290,10 +299,10 @@
         </div>
 
       </div>
-      <div class="bg-white rounded-[20px] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col pt-[20px]">
+      <div class="reveal-up bg-white rounded-[20px] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col pt-[20px]">
 
         <!-- Top Accent Tag -->
-        <div class="flex justify-start">
+        <div class="reveal-left flex justify-start">
           <div class="bg-[#C9A24D] flex items-center justify-start gap-[10px] pl-5 py-2.5 pr-2.5 rounded-r-full">
             <span class="text-white text-lg leading-[18px] font-semibold font-roboto">
               Amazon Accelerator
@@ -302,7 +311,7 @@
         </div>
 
         <!-- Content Area -->
-        <div class="flex flex-col gap-[20px] px-[20px] pb-[30px] mt-[20px] flex-1">
+        <div class="reveal-up flex flex-col gap-[20px] px-[20px] pb-[30px] mt-[20px] flex-1">
 
           <!-- Top Content Block -->
           <div class="flex flex-col gap-[10px] ">
@@ -340,7 +349,7 @@
       <div class="bg-white rounded-[20px] shadow-[0_4px_24px_rgba(0,0,0,0.05)] flex flex-col pt-[20px]">
 
         <!-- Top Accent Tag -->
-        <div class="flex justify-start">
+        <div class="reveal-left flex justify-start">
           <div class="bg-[#C9A24D] flex items-center justify-start gap-[10px] pl-5 py-2.5 pr-2.5 rounded-r-full">
             <span class="text-white text-lg leading-[18px] font-semibold font-roboto">
               One-Time Fix
@@ -349,7 +358,7 @@
         </div>
 
         <!-- Content Area -->
-        <div class="flex flex-col gap-[20px] px-[20px] pb-[30px] mt-[20px] flex-1">
+        <div class="reveal-up flex flex-col gap-[20px] px-[20px] pb-[30px] mt-[20px] flex-1">
 
           <!-- Top Content Block -->
           <div class="flex flex-col gap-[10px]">
@@ -399,7 +408,7 @@
       <div class="relative md:pr-[50px] md:border-r md:border-[#111317] py-[20px] md:col-span-7">
 
         <!-- LEFT CARD -->
-        <div class="absolute left-0 top-5 px-6 md:px-10 py-10 rounded-md lg:py-[52px] lg:rounded-[20px] 
+        <div class="reveal-left absolute left-0 top-5 px-6 md:px-10 py-10 rounded-md lg:py-[52px] lg:rounded-[20px] 
                 bg-[#f0f0f0] shadow-[0_4px_20px_rgba(0, 0, 0, 0.05)] 
                 flex items-center justify-center">
 
@@ -417,7 +426,7 @@
         </div>
 
         <!-- RIGHT CARD -->
-        <div class="absolute right-4 -bottom-56 md:right-[30px] md:bottom-5 bg-white border border-[#C9A24D]
+        <div class="reveal-up absolute right-4 -bottom-56 md:right-[30px] md:bottom-5 bg-white border border-[#C9A24D]
                 lg:rounded-[20px] p-6 md:px-10 rounded-md lg:px-[32px] lg:py-[30px]
                 shadow-[0_4px_20px_rgba(0, 0, 0, 0.05)] flex flex-col items-center justify-center gap-2">
 
@@ -439,42 +448,42 @@
       <div class="bg-white rounded-[20px] flex flex-col py-[15px] md:pl-[30px] md:col-span-5">
 
         <!-- Top Accent Tag -->
-        <div class="justify-start">
+        <div class="reveal-wrapper justify-start">
           <h3
-            class="font-bold font-inter text-2xl leading-relaxed  md:text-[35px] md:leading-[35px] text-[#111317] pb-[5px] md:pb-[15px] border-b border-[#C9A24D]">
+            class=" reveal-text font-bold font-inter text-2xl leading-relaxed  md:text-[35px] md:leading-[35px] text-[#111317] pb-[5px] md:pb-[15px] border-b border-[#C9A24D]">
             What we fixed</h3>
         </div>
 
         <!-- Content Area -->
-        <div class="flex flex-col gap-[25px] py-[25px] flex-1">
+        <div class="reveal-up flex flex-col gap-[25px] py-[25px] flex-1">
 
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-5 h-5 lg:w-7 lg:h-7" alt=""></div>
-            <p class="text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               Rebuilt 47 product listings from scratch
             </p>
           </div>
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-5 h-5 lg:w-7 lg:h-7" alt=""></div>
-            <p class="text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               Removed 12 unauthorized sellers
             </p>
           </div>
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-5 h-5 lg:w-7 lg:h-7" alt=""></div>
-            <p class="text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               Took buy box ownership from 34% to 98%
             </p>
           </div>
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-5 h-5 lg:w-7 lg:h-7" alt=""></div>
-            <p class="text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               Implemented proper FBA strategy
             </p>
           </div>
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-5 h-5 lg:w-7 lg:h-7" alt=""></div>
-            <p class="text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm lg:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               Restructured PPC to 22% ACoS
             </p>
           </div>
@@ -489,7 +498,7 @@
 
     </div>
     <div class="mt-0 md:mt-8 lg:mt-[50px]">
-      <button class="w-full bg-[#C9A24D] text-white text-sm lg:text-base font-semibold px-[20px] lg:px-[30px] py-2.5 lg:py-5 rounded-full transition">
+      <button class=" reveal-up w-full bg-[#C9A24D] text-white text-sm lg:text-base font-semibold px-[20px] lg:px-[30px] py-2.5 lg:py-5 rounded-full transition click-btn btn-style505">
         See The Full Breakdown
       </button>
     </div>
@@ -497,18 +506,18 @@
   </section>
 
   <section class="bg-[#F2F3F5] px-6 md:px-10 py-10 xl:px-20 xl:py-20">
-    <div class=" mx-auto text-center">
+    <div class="reveal-wrapper mx-auto text-center">
       <p
         class="max-w-xs  mx-auto text-center text-base md:text-[22px] md:leading-[22px] font-roboto text-[#A8873A] font-semibold pb-4 md:pb-[30px] border-b border-[#A8873A]">
         IS THIS YOU?</p>
-      <h3 class="mt-5 text-2xl md:text-[35px] xl:text-[45px] xl:leading-[55px] font-roboto font-bold">This is NOT for <span
+      <h3 class="reveal-text mt-5 text-2xl md:text-[35px] xl:text-[45px] xl:leading-[55px] font-roboto font-bold">This is NOT for <span
           class="italic font-[900]">Everyone.</span></h3>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 mt-10 gap-[35px]">
       <div class="bg-white rounded-[20px] border-[3px] border-[#E5E7EB] flex flex-col pt-[30px]">
 
         <!-- Top Accent Tag -->
-        <div class="flex justify-start">
+        <div class="reveal-left flex justify-start">
           <div
             class="bg-[#C9A24D] flex items-center justify-start py-2.5 pl-4 pr-2.5 lg:pl-[30px] lg:py-[15px] lg:pr-[15px] rounded-r-full">
             <span class="text-white text-base lg:text-[30px] lg:leading-[27px] font-bold font-roboto italic">
@@ -520,37 +529,37 @@
         <!-- Content Area -->
         <div class="flex flex-col gap-[21px] pl-[30px] pb-[32px] pt-[30px] flex-1">
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#A8873A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               Your products are already on Amazon (even if it's a mess)
             </p>
           </div>
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#A8873A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               You're doing $25k+/month in revenue somewhere
             </p>
           </div>
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#A8873A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               You're tired of fighting unauthorized sellers
             </p>
           </div>
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#A8873A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               You want to grow Amazon without babysitting it
             </p>
           </div>
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#A8873A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               You're ready to make a decision, not "think about it"
             </p>
           </div>
@@ -561,7 +570,7 @@
       <div class="bg-[#EFEFEF] rounded-[20px] border-[3px] border-[#E5E7EB] flex flex-col pt-[30px]">
 
         <!-- Top Accent Tag -->
-        <div class="flex justify-start">
+        <div class="reveal-left flex justify-start">
           <div
             class="bg-[#C9A24D] flex items-center justify-start  py-2.5 pl-4 pr-2.5 lg:pl-[30px] lg:py-[15px] lg:pr-[15px] rounded-r-full">
             <span class="text-white text-base lg:text-[30px] lg:leading-[27px] font-bold font-roboto italic">
@@ -573,37 +582,37 @@
         <!-- Content Area -->
         <div class="flex flex-col gap-[21px] pl-[30px] pb-[32px] pt-[30px] flex-1">
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#8C919A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               You're looking for the cheapest option
             </p>
           </div>
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#8C919A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               You won't enforce MAP pricing
             </p>
           </div>
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#8C919A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               You want to "just run some ads"
             </p>
           </div>
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#8C919A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               Amazon isn't a real priority for your business
             </p>
           </div>
 
-          <div class="flex items-center gap-[9px]">
+          <div class="reveal-wrapper flex items-center gap-[9px]">
             <div class="w-3 h-3 md:w-4 md:h-4 bg-[#8C919A] rounded-full shrink-0"></div>
-            <p class="text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
+            <p class="reveal-text text-sm md:text-lg leading-[20px] italic font-medium text-[#111317]">
               You need to "run it by" 6 people before deciding
             </p>
           </div>
@@ -616,11 +625,11 @@
   </section>
 
   <section class="px-6 md:px-10 py-10 xl:px-20 xl:py-20">
-    <div class=" mx-auto text-center">
+    <div class="reveal-wrapper mx-auto text-center">
       <p
         class="max-w-xs  mx-auto text-center  text-base md:text-[22px] md:leading-[22px] font-roboto text-[#A8873A] font-semibold pb-4 md:pb-[30px] border-b border-[#A8873A]">
         FREE</p>
-      <h3 class="mt-5 text-2xl md:text-[30px] xl:text-[45px] xl:leading-[55px] font-roboto font-bold">Get Your Free Amazon Channel <br class="hidden md:block"/>Audit <span
+      <h3 class="reveal-text mt-5 text-2xl md:text-[30px] xl:text-[45px] xl:leading-[55px] font-roboto font-bold">Get Your Free Amazon Channel <br class="hidden md:block"/>Audit <span
           class="italic font-[900]">(Normally $599)</span></h3>
     </div>
     <div class="md:pt-10 grid grid-cols-1 lg:grid-cols-2 mt-10 gap-[35px]">
@@ -629,34 +638,34 @@
         <!-- Top Accent Tag -->
         <div class="justify-start">
           <h3
-            class="font-bold font-inter text-2xl md:text-[35px] md:leading-[35px] text-[#111317] pb-[15px] border-b border-[#C9A24D]">
+            class="reveal-up font-bold font-inter text-2xl md:text-[35px] md:leading-[35px] text-[#111317] pb-[15px] border-b border-[#C9A24D]">
             What You get:</h3>
         </div>
 
         <!-- Content Area -->
         <div class="flex flex-col gap-[25px] py-5 md:pt-[30px] md:pb-[25px] flex-1">
 
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-4 h-4 md:w-7 md:h-7" alt=""></div>
-            <p class="text-sm md:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm md:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               Complete audit of your current Amazon presence
             </p>
           </div>
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-4 h-4 md:w-7 md:h-7" alt=""></div>
-            <p class="text-sm md:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm md:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               Identification of every revenue leak
             </p>
           </div>
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-4 h-4 md:w-7 md:h-7" alt=""></div>
-            <p class="text-sm md:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm md:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               Specific recommendations (whether you work with us or not)
             </p>
           </div>
-          <div class="flex items-center gap-[5px] md:gap-[10px]">
+          <div class="reveal-wrapper flex items-center gap-[5px] md:gap-[10px]">
             <div class="shrink-0"><img src="./images/icon.png" class="w-4 h-4 md:w-7 md:h-7" alt=""></div>
-            <p class="text-sm md:text-xl leading-[20px] italic font-medium text-[#8C919A]">
+            <p class="reveal-text text-sm md:text-xl leading-[20px] italic font-medium text-[#8C919A]">
               No pitch. No pressure. Just answers.
             </p>
           </div>
@@ -670,7 +679,7 @@
             you should do<br class="hidden md:block" />instead - even if that's nothing.</h3>
         </div>
         <div class="mt-[25px]">
-          <button class="w-full bg-[#C9A24D] text-white text-sm md:text-base font-semibold px-5 py-2 md:px-[30px] md:py-5 rounded-full transition">
+          <button class="reveal-up w-full bg-[#C9A24D] text-white text-sm md:text-base font-semibold px-5 py-2 md:px-[30px] md:py-5 rounded-full transition click-btn btn-style505">
             Request Your Free Audit
           </button>
 
@@ -687,7 +696,7 @@
 
   <section class="px-6 md:px-10 py-10 xl:px-20 xl:pt-[88px] xl:pb-[45px] bg-[#F2F3F5]">
   <div class="flex flex-col md:flex-row justify-between">
-    <div class="relative shrink-0">
+    <div class="reveal-up relative shrink-0">
       <img src="./images/logo.png" alt="" class="w-[160px] h-[70px] lg:w-[302px] lg:h-[133px]">
     </div>
     <div class="mt-8 md:mt-0 relative">
@@ -695,7 +704,7 @@
       <p class="text-base md:text-[25px] md:leading-[25px] font-roboto font-medium text-[#8C919A]">info@goldlabelsales26.com</p>
     </div>
   </div>
-  <div class="pt-8 md:pt-[55px]">
+  <div class="reveal-up pt-8 md:pt-[55px]">
     <h3 class="text-2xl md:text-[40px] text-[#C9A24D] font-roboto italic font-extrabold text-center mb-10">10 Years. 16 Brands. $70M+ in Amazon Revenue Managed.</h3>
     <p class="text-sm md:text-base font-inter fot-medium text-[#111317] leading-[16px] text-center border-t border-[#111317] pt-5">Copyright © 2026 Gold Label Sales. All rights reserved.</p>
   </div>
@@ -721,6 +730,11 @@
       overlay.classList.add('hidden');
     }
   </script>
+  <script src="./js/animation.js"></script>
+  <!-- GSAP CDN -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
 </body>
 
 </html>
